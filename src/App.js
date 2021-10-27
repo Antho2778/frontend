@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import './Pages/Prestations.js';
+import './style/App.css';
+import Home from './Pages/Home';
+import NotFound from './Pages/NotFound.js';
+import Prestations from './Pages/Prestations.js';
+import Realisations from './Pages/Realisations.js';
+import Review from './Pages/Review'
+import Contact from './Pages/Contact.js';
+
+
+
+// menu en fixe en haut comme apple (defilement changement de page) 
+// utiliser les path avec 
+// rsc pour crée des components 
+// 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return ( 
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/Prestations'  component={Prestations} />
+          <Route path='/Realisations' component={Realisations} />
+          <Route path='/Review' component={Review} />
+          <Route path='/Contact' exact component={Contact} />
+          <Route path='/' component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 

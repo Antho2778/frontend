@@ -1,0 +1,85 @@
+
+
+/* logo et titre */ 
+
+/* general */
+
+.fixed_nav{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 0px 0px 5px 5px ;
+    box-shadow: 0px 0px 5px 2px black;
+    background-color: RGB(72,73,88);
+}
+.logo_primary{
+    display: flex;
+    margin-left: 30px;
+}
+
+.nav_primary{
+    display: block;
+    margin-right:150px;
+}
+
+/* general */
+
+
+.title{
+    display: flex;
+    color: RGB(246,250,246);
+    font-family: 'Lobster' ,sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 45px;
+
+}
+.Span_txt{
+    color: rgba(35, 158, 237, 1);
+}
+
+
+.logo{
+    display: block;
+    
+    width: 100px;
+    height: 100px;
+}
+
+
+/* logo et titre */ 
+
+
+/* liste item */
+
+#liste_main{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    
+}
+.liste_item{
+    display: flex;
+    padding: 0px 25px;
+}
+.link{
+    text-decoration: none;
+    font-size: 30px;
+    color: RGB(246,250,246);
+    
+    font-family: 'Lobster', sans-serif;
+}
+
+.link:hover, .navActive{
+    /*color: RGB(63,113,173);*/
+    color: rgba(35, 158, 237, 1);
+    text-shadow: 5px 5px 5px  black;
+    transition: all .2S;
+}
+
+/* liste item */
