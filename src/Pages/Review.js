@@ -2,7 +2,7 @@ import React, { Component,setState,useEffect, useState } from "react";
 import axios from "axios";
 import "../style/Review.css"
 import Navigation from "../Navigation";
-import Prestations from "./Prestations";
+import ReviewExtend from "../components/ReviewExtend";
 
 
 class Review extends Component {
@@ -10,6 +10,8 @@ class Review extends Component {
     super(props);
     this.state = {
       reviews: [],
+      ReviewExtend: Array(9).fill(null),
+      descriptionActive: null,
       windowDescription: false,
       activeItem: {
         last_name: "",
@@ -40,6 +42,7 @@ class Review extends Component {
       <ul
         key={item.id}
         className="review_item"
+        
       >
         <li>
           <span className={`todo-title mr-2`} lastName={item.date}>
@@ -58,29 +61,32 @@ class Review extends Component {
         </li>
         <span></span>
         <button className="Button_description" lastName={item.id} 
-        onClick = {this.openWindow}>
+        onClick = { () => this.openWindow(item.id) }>
             Voir plus 
         </button>
       </ul>
     ));
   };
 
-  openWindow = () => {
+  openWindow (id) {
+    this.state.descriptionActive = id
     //this.setState({windowDescription: this.state.windowDescription = true})
     if (this.state.windowDescription == false) {
       this.setState({windowDescription: true})
     }else{
       this.setState({windowDescription: false})
     }
-
   }
 
- showDescriptionReview= () => {
-  return this.state.reviews.map((Element) => {
-    <ul>
-      <li>{Element.description}</li>
-    </ul>
-  })
+
+
+renderSquare(id) {
+  let review = this.state.reviews.find(element => element.id == id)
+  return (
+    <ReviewExtend
+      value={review.description}
+    />
+  );
 }
   
 
@@ -97,7 +103,7 @@ class Review extends Component {
               </div>
               {this.state.windowDescription && (
                 <div className='Extend'>
-                  {this.showDescriptionReview()}
+                  <p>{this.renderSquare(this.state.descriptionActive)}</p>
                 </div>
               )}
             </div>
