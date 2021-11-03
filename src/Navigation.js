@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./style/Navigation.css"
 import logo from "./assets/logo.png"
-import logo_title from "./assets/logo_title.png"
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { Component } from "react";
 
 

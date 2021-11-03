@@ -2,7 +2,7 @@ import React, { Component,setState,useEffect, useState } from "react";
 import axios from "axios";
 import "../style/Review.css"
 import Navigation from "../Navigation";
-import ReviewExtend from "../components/ReviewExtend";
+import ReviewExtend from "../components/ExtendMenu";
 
 
 class Review extends Component {
@@ -41,26 +41,18 @@ class Review extends Component {
     return this.state.reviews.map((item) => (
       <ul
         key={item.id}
-        className="review_item"
-        
+        className="review_item" 
       >
-        <li>
-          <span className={`todo-title mr-2`} lastName={item.date}>
+        <li className="listItem" lastName={item.date}>
             {item.date}
-          </span>
         </li>
-        <li>
-          <span className={`todo-title mr-2`} lastName={item.last_name}>
+        <li className="listItem" lastName={item.last_name} >
             {item.last_name}
-          </span>
         </li>
-        <li>
-          <span className={`todo-title mr-2`} lastName={item.rating}>
+        <li className="listItem" lastName={item.rating}>
             {item.rating}
-          </span>
         </li>
-        <span></span>
-        <button className="Button_description" lastName={item.id} 
+        <button className="Button_more" lastName={item.id} 
         onClick = { () => this.openWindow(item.id) }>
             Voir plus 
         </button>
@@ -83,9 +75,9 @@ class Review extends Component {
 renderSquare(id) {
   let review = this.state.reviews.find(element => element.id == id)
   return (
-    <ReviewExtend
-      value={review.description}
-    />
+    <ul>
+      <li>{review.description}</li>
+    </ul>
   );
 }
   
@@ -123,3 +115,8 @@ c'est true 11 sinon 2  */
 
 /* let review = Object.values(this.state.reviews).find( reviews => {
       return reviews.id == id */
+
+
+      /*<ExtendMenu
+      value={review.description}
+    /> */

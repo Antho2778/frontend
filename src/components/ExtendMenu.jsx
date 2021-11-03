@@ -2,7 +2,7 @@ import { Component } from "react";
 
 
 
-class ReviewExtend extends Component {
+class ExtendMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,4 +23,4 @@ class ReviewExtend extends Component {
 
 
 
-export default ReviewExtend;
+export default ExtendMenu;

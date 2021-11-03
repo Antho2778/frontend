@@ -1,17 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Navigation from "../Navigation";
-import { getByTitle } from "@testing-library/dom";
-
-/*
-function Prestations() {
-    return (
-        <div className='Master_div'>
-            <p>Bienvenue dans prestations</p>
-        </div>
-    )
-}
-*/
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 class Prestations extends Component {
     constructor(props) {

@@ -1,19 +1,9 @@
 
 
-.box_item {
-    display: flex;
-    width: 100%;
-
-}
-
-.Item{
-    display: block;
-    width: 100%;
-    background-color: aqua;
-}
-
 .Extend{
     display: block;
     width: 100%;
-    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 10px;
+    animation-name: slide;
 }
