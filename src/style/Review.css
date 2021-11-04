@@ -1,9 +1,34 @@
 
-
+/*
 .Extend{
     display: block;
     width: 100%;
     border: 1px solid;
     border-radius: 10px;
-    animation-name: slide;
 }
+*/
+
+.box_item {
+    display: flex;
+    width: 100%;
+
+}
+
+/* item list */ 
+
+.Item{
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.review_item{
+    border: 1px solid black;
+}
+
+
+
+/* item list */ 
+
+
+

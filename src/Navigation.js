@@ -1,18 +1,12 @@
 
-import React from "react";
+import React,{useState} from "react";
 import { NavLink } from "react-router-dom";
 import "./style/Navigation.css"
 import logo from "./assets/logo.png"
-import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { Component } from "react";
 
 
-class Navigation extends Component {
-
-  menuExtend = () => {
-
-  }
-  render () {
+function Navigation () {
     return (
   
         <div className='master_nav_div'>
@@ -24,45 +18,42 @@ class Navigation extends Component {
             </h1>
           </div>
           <div className="nav_primary">
-              <ul id='liste_main'>
+              <ul id='liste_main' >
               <li className='liste_item'>
-                  <NavLink exact to="/" className='link' activeClassName='navActive' >
+                  <NavLink exact to="/"  className='link' activeClassName='navActive' >
                     <i className='icon'></i>
                     <span>Acceuil</span>
                   </NavLink>
                 </li>
                 <li className='liste_item'>
-                  <NavLink exact to="/Prestations" className='link' activeClassName='navActive'>
+                 <NavLink exact to="/Prestations"  className='link' activeClassName='navActive'>
                     <i className='icon'></i>
                     <span>Prestations</span>
                   </NavLink>
                 </li>
                 <li className='liste_item'>
-                  <NavLink exact to="/Realisations" className='link' activeClassName='navActive'>
+                  <NavLink exact to="/Realisations"  className='link' activeClassName='navActive'>
                     <i className='icon'></i>
                     <span>Realisations</span>
                   </NavLink>
                 </li>
                 <li className='liste_item'>
-                  <NavLink exact to="/Review" className='link' activeClassName='navActive'>
+                  <NavLink exact to="/Review"  className='link' activeClassName='navActive'>
                     <i className='icon'></i>
                     <span >Avis</span>
                   </NavLink>
                 </li>
                 <li className='liste_item'>
-                  <NavLink exact to="/Contact" className='link' activeClassName='navActive'>
+                  <NavLink exact to="/Contact"  className='link' activeClassName='navActive'>
                     <i className='icon'></i>
                     <span>Contact</span>
                   </NavLink>
                 </li>
               </ul>
-            </div>
-          </div>
         </div>
-    );
-  }
-}
-  
-  export default Navigation;
+      </div>
+    </div>
+  )}
 
+  export default Navigation ; 
   /* target="_blank" rel='noopener noreferrer" (Anti virus)*/ 

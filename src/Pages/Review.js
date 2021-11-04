@@ -85,7 +85,6 @@ renderSquare(id) {
   render() {
     return (
       <div className='master_div'>
-        <Navigation />
         <div className="mast_2">
           <div id="align">
             <h1>Les avis clients</h1>

@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import Navigation from "../Navigation";
 import "../style/Contact.css"
+import { Button, Form } from "react-bootstrap";
+
 
 function Contact() {
+  
     return (
-    
       <div className='master_div'>
-        <Navigation />
         <div className="mast_2">
         <div id="align">
           <h1 className="headTitle">Nous contacter</h1>
@@ -64,8 +65,9 @@ function Contact() {
             </form>
           </div>
         </div>
-      </div>
+        </div>
     </div>
+    
     );
   }
   

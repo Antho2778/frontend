@@ -56,7 +56,6 @@ class Prestations extends Component {
     render() {
         return (
           <div className="master_div">
-            <Navigation />
             <div className="mast_2">
               <div id="align">
                 <h1 className="text-white text-uppercase text-center my-4">Prestations</h1>

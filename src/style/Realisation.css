@@ -4,9 +4,190 @@
 
 .photos {
     display: block;
-    width: 300px;
-    height: 500px;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 20px 0px;
+    padding: 0;
+    border: 1px solid #484958;
+    border-radius: 10px; 
+    box-shadow: 0 0 0 0 #484958;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	to {
+	  box-shadow: 0 0 0 20px rgba(0,0,0,0.01); /* x,y,floue,spread (etandu) */
+	}
+  }
+
+/* IMAGE */
+
+
+/* list item */ 
+
+.list-group-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    border: 1px solid #484958;
+    background-color: #6EA2DC;
+}
+.list-group-item:hover{
+    background-color: #239EED;
+    box-shadow: inset 1px 1px 5px black;
+    transition: all 0.3s ease;
+}
+.ItemDiv{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    border: 1px solid #484958;
+    border-radius: 10px;
+    padding: 10px 0px;
+    background-color: #484958;
+    z-index: 1;
 }
 
 
-/* IMAGE */
+
+/* list item */ 
+
+/* elem div */ 
+
+.itemSlider{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.liItemDiv{
+    padding: 0;
+    margin: 0;
+}
+.paraDiv{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+}
+/* elem div */ 
+
+
+/* btn contact fade */ 
+
+#divforContact{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+#paraContact{
+    display: flex;
+    color: black;
+    transition: 1s ease;
+    opacity: 1;
+    z-index: 4;
+}
+
+
+#linkContact{
+    display: flex;
+    text-decoration: none ;
+    opacity: 1;
+    z-index: 4;
+}
+
+#linkContact:hover {
+    background-color: #484958;
+    border-radius: 10px;
+    transition: 1s ease;
+}
+.pathContact:hover {
+    color: RGB(246,250,246);
+    border-radius: 10px;
+    transition: 0.5s ease;
+    
+}
+
+.pathContact {
+    display: flex;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+}
+
+.Anim-cercle {
+    position: absolute;
+    align-items: center;
+    background-color: #239EED;
+    width: 160px;
+    height: 170px;
+    border: 1px solid #fff;
+	animation: 1s linear infinite alternate MoveBox,
+			   4s linear infinite roulette;
+    border-radius: 50%;
+    padding: 50px;
+    z-index: 3;
+}
+
+
+
+
+
+@keyframes MoveBox {
+	from {
+		box-shadow: 
+		0 0 0 #3e34d3,
+		0 0 0 #484958,
+		0 0 0 #239EED,
+		0 0 0 #7B7D9A;
+	}
+	to {
+		box-shadow: 
+		0 -10px 10px #3e34d3,
+		-10px 0 10px #484958,
+		0 10px 10px #239EED,
+		10px 0 10px #7B7D9A;
+	}
+}
+
+@keyframes roulette {
+	from {
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+/* anim cercle */ 
+
+
+
+/* anim cercle */ 
+/* btn contact fade */ 
+
+
+/* BTN */ 
+
+.Button_more {
+    display: flex;
+    position: relative;
+    align-self: center;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+
+
+/*BTN */ 

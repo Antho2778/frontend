@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Navigation from "../Navigation";
 import ReviewExtend from "../components/ExtendMenu";
 import "../style/Realisation.css"
 import ExtendMenu from "../components/ExtendMenu";
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
+import { useState } from "react";
 
 /*
 function realisation() {
@@ -74,53 +77,72 @@ class Realisation extends Component {
             >
               {item.lieu}
             </li>
-            <button className="Button_more" lastName={item.id} 
-            onClick = { () => this.openWindow(item.id)}
-                  >
-                afficher/masquer
-            </button>
+            <div className="Button_more" lastName={item.id} 
+            onClick={() => this.openWindow(item.id)}
+            >
+                Afficher
+            </div>
           </ul>
         ));
       };
 
-     
       openWindow (id) {
         this.state.descriptionActive = id
-        if (this.state.windowDescription == false) {
+        let divForm = document.getElementById("divforContact")
+        if (this.state.windowDescription == false || this.state.descriptionActive == id) {
           this.setState({windowDescription: true})
+          this.setState({windowDescription: () => this.renderSquare(id)})
+          divForm.style.display = 'Flex'
         }else{
-          this.setState({windowDescription: false})
+          <NavLink exact to="/" />
         }
       }
 
+      closeWindow() {
+        let divForm = document.getElementById("divforContact")
+        this.setState({windowDescription: false})
+        divForm.style.display='none'
+      }
+    
+    
       renderSquare(id) {
-        this.state.descriptionActive = id
         let realisation = this.state.realisations.find(element => element.id == id)
         return (
-          <ul>
-              <li>{realisation.description}</li>
-              <li><img className="photos" src={realisation.photo_before}/></li>
-              <li><img className="photos" src={realisation.photo_after}/></li>
-          </ul>  
-          
-        );
+            <ul className="itemSlider">
+                <div id="btn_exit" onClick={() => this.closeWindow(id)}>Fermer</div>
+                <li className="liItemDiv"><p className="paraDiv">{realisation.description} à {realisation.lieu}.
+                </p></li>
+                <li><img className="photos" alt={realisation.photo_before} src={realisation.photo_before}/></li>
+                <li><img className="photos" alt={realisation.photo_after}  src={realisation.photo_after}/></li>
+                <li className="liItemDiv"><p className="paraDiv">Les travaux ont été réalisé le {realisation.date}.</p></li>
+            </ul>  
+            
+          );
       }
-        
+
+
     render() {
+
         return (
         <div className="master_div">
-            <Navigation />
             <div className="mast_2">
                 <div id="align">
-                    <h1 className="text-white text-uppercase text-center my-4">Realisation</h1>
+                    <h1 className="title_first">Realisation</h1>
                     <div className="box_item">
-                        <div className="Item">
+                        <div className="ItemDiv">
                             {this.renderItems()}
+                            <div id="divforContact">
+                              <div className="Anim-cercle"></div>
+                                <h2 id="paraContact">Envie de réalisé un projet ?</h2>
+                                <a id="linkContact"><NavLink exact to="/contact" className="pathContact">
+                                Prendre contact
+                                </NavLink></a>
+                            </div>
                         </div>
                         {this.state.windowDescription && (
-                        <div className="Extend" >
-                            <p>{this.renderSquare(this.state.descriptionActive)}</p>
-                        </div>
+                            <div className="Extend"  >
+                               <p>{this.renderSquare(this.state.descriptionActive)}</p>
+                            </div>
                         )}
                     </div>
                 </div>
@@ -138,3 +160,4 @@ export default Realisation;
 
 /*  <img className="photos" src = {item.photo_before} />
     <img className="photos" src = {item.photo_after} /> */ 
+    /* `id${item}` */
