@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Navigation from "../Navigation";
+import "../style/Prestations.css"
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 class Prestations extends Component {
@@ -32,17 +33,20 @@ class Prestations extends Component {
     renderItems = () => {
         return this.state.prestations.map((item) => (
           <li
-            key={item.id}
-            className="list-group-item d-flex justify-content-between align-items-center"
-            onClick = {() => this.showDescription(item.id)}
+          key={item.id}
+          className="Title_presta"
+          onClick = {() => this.showDescription(item.id)}
           >
-            <span
-              className={`todo-title mr-2`}
-              title = {item.description}
-            >
-              {item.title}
-            </span>
+              <span
+                className="Span_title_text"
+                title = {item.description}
+              >
+                  {item.title}
+              </span>
+              <div className="Voile_slider"><p className="describe_slider">{item.description}</p></div>
           </li>
+          
+          
         ));
       };
      
@@ -58,11 +62,31 @@ class Prestations extends Component {
           <div className="master_div">
             <div className="mast_2">
               <div id="align">
-                <h1 className="text-white text-uppercase text-center my-4">Prestations</h1>
+                <div className="bg_title_presta">
+                  <h1 className="title_first">Prestations</h1>
+                </div>
                 <div className="row">
-                  <ul className="list-group list-group-flush border-top-0" >
+                  <section className="Sect_01">
+                    <div className="Div_para_sect">
+                      <h2 className="title_sect_01">Possibilités Étandu</h2>
+                      <div className="para_sect_01"><p>Sphér'eau bénéficie d'une expérience concréte sur chaque branche composant la plomberie en général.<br/>
+                      Du petit au gros chantiers, du plus compliqué au plus simple, nous réalisons vos demandes. <br/>
+                      Voici les prestations sur lesquel nous intevenons souvent :  </p></div>
+                    </div>
+                  </section>
+                  <ul className="first_list_presta" >
                     {this.renderItems()}
-                </ul>
+                  </ul>
+                  <section>
+                    <div className="Div_para_sect">
+                      <h2 className="title_sect_01">secteurs d'intervention</h2>
+                      <div className="para_sect_01"><p>Spher'eau intervient principalement sur 3 grandes régions : <span className="important">l'Eure (27)</span>, 
+                      <span className="important"> l'Ile de france</span> et <span className="important">l'Aube (10)</span></p></div>
+                    </div>
+                    <aside>
+
+                    </aside>
+                  </section>
               </div>
             </div>
           </div>

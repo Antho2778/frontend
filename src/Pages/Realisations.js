@@ -77,7 +77,7 @@ class Realisation extends Component {
             >
               {item.lieu}
             </li>
-            <div className="Button_more" lastName={item.id} 
+            <div className="BtnMore" lastName={item.id} 
             onClick={() => this.openWindow(item.id)}
             >
                 Afficher
@@ -92,6 +92,8 @@ class Realisation extends Component {
         if (this.state.windowDescription == false || this.state.descriptionActive == id) {
           this.setState({windowDescription: true})
           this.setState({windowDescription: () => this.renderSquare(id)})
+          divForm.style.opacity='1'
+          divForm.style.transition='1s all ease'
           divForm.style.display = 'Flex'
         }else{
           <NavLink exact to="/" />
@@ -101,6 +103,8 @@ class Realisation extends Component {
       closeWindow() {
         let divForm = document.getElementById("divforContact")
         this.setState({windowDescription: false})
+        divForm.style.opacity='0'
+        divForm.style.transition='1s all ease'
         divForm.style.display='none'
       }
     
@@ -127,22 +131,24 @@ class Realisation extends Component {
         <div className="master_div">
             <div className="mast_2">
                 <div id="align">
-                    <h1 className="title_first">Realisation</h1>
-                    <div className="box_item">
-                        <div className="ItemDiv">
-                            {this.renderItems()}
-                            <div id="divforContact">
-                              <div className="Anim-cercle"></div>
-                                <h2 id="paraContact">Envie de réalisé un projet ?</h2>
-                                <a id="linkContact"><NavLink exact to="/contact" className="pathContact">
-                                Prendre contact
-                                </NavLink></a>
+                  <div className="bg_title_rea">
+                    <h1 className="title_first">Réalisations</h1>
+                  </div>
+                  <div className="box_item">
+                      <div className="ItemDiv">
+                          {this.renderItems()}
+                          <div id="divforContact">
+                            <div className="Anim-cercle"></div>
+                              <h2 id="paraContact">Envie de réalisé un projet ?</h2>
+                              <a id="linkContact"><NavLink exact to="/contact" className="pathContact">
+                              Prendre contact
+                              </NavLink></a>
                             </div>
                         </div>
                         {this.state.windowDescription && (
-                            <div className="Extend"  >
-                               <p>{this.renderSquare(this.state.descriptionActive)}</p>
-                            </div>
+                          <div className="Extend"  >
+                              <p>{this.renderSquare(this.state.descriptionActive)}</p>
+                          </div>
                         )}
                     </div>
                 </div>

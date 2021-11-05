@@ -1,12 +1,13 @@
 
-/*
-.Extend{
-    display: block;
+.bg_title_review{
+    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, #fff 75%),url("../assets/Good_job.jpg");
+    background-position: center center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 0px ;
     width: 100%;
-    border: 1px solid;
-    border-radius: 10px;
+    z-index: 1;
 }
-*/
 
 .box_item {
     display: flex;

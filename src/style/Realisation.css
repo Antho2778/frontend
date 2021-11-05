@@ -10,13 +10,16 @@
     padding: 0;
     border: 1px solid #484958;
     border-radius: 10px; 
+   
+}
+.photos:hover{
     box-shadow: 0 0 0 0 #484958;
-    animation: pulse 2s infinite;
+    animation: pulse 0.7s infinite;
 }
 
 @keyframes pulse {
 	to {
-	  box-shadow: 0 0 0 20px rgba(0,0,0,0.01); /* x,y,floue,spread (etandu) */
+	  box-shadow: 0 0 15px 5px rgba(0,0,0,0.01); /* x,y,floue,spread (etandu) */
 	}
   }
 
@@ -91,6 +94,7 @@
 
 
 #paraContact{
+    font-size: 18px;
     display: flex;
     color: black;
     transition: 1s ease;
@@ -134,12 +138,22 @@
     height: 170px;
     border: 1px solid #fff;
 	animation: 1s linear infinite alternate MoveBox,
-			   4s linear infinite roulette;
+			   1.5s linear infinite roulette;
     border-radius: 50%;
     padding: 50px;
     z-index: 3;
 }
 
+.bg_title_rea{
+    /*position: relative;*/
+    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, #fff 75%),url("../assets/bg_Rea-2.jpg");
+    background-position: center center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 0px ;
+    width: 100%;
+    z-index: 1;
+}
 
 
 
@@ -179,13 +193,26 @@
 
 /* BTN */ 
 
-.Button_more {
+.BtnMore {
     display: flex;
     position: relative;
-    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 15px;
+    border: 1px solid black;
+    border-radius: 30px;
     padding: 10px;
     cursor: pointer;
+    background-color: #fff;
+}
 
+.BtnMore:hover{
+    box-shadow: 0 0 2px 0 black;
+}
+
+.BtnMore:active{
+    box-shadow: inset 0 0 4px 0 black;
 }
 
 

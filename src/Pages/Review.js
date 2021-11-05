@@ -87,7 +87,9 @@ renderSquare(id) {
       <div className='master_div'>
         <div className="mast_2">
           <div id="align">
-            <h1>Les avis clients</h1>
+          <div className="bg_title_review">
+                  <h1 className="title_first">Les avis clients</h1>
+                </div>
             <div className="box_item">
               <div className="Item">
                 {this.renderItems()}
