@@ -34,7 +34,7 @@ function App() {
               <Route path='/Realisations' component={Realisations} />
               <Route path='/Review' component={Review} />
               <Route path='/Contact' exact component={Contact} />
-              <Route path='/' component={NotFound} />
+              <Route component={NotFound} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
