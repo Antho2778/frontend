@@ -67,12 +67,6 @@ class Realisation extends Component {
             </li>
             <li
               className="listItem"
-              title = {item.date}
-            >
-              {item.date}
-            </li>
-            <li
-              className="listItem"
               title = {item.lieu}
             >
               {item.lieu}
@@ -88,24 +82,24 @@ class Realisation extends Component {
 
       openWindow (id) {
         this.state.descriptionActive = id
-        let divForm = document.getElementById("divforContact")
+       // let divForm = document.getElementById("divforContact")
         if (this.state.windowDescription == false || this.state.descriptionActive == id) {
           this.setState({windowDescription: true})
           this.setState({windowDescription: () => this.renderSquare(id)})
-          divForm.style.opacity='1'
-          divForm.style.transition='1s all ease'
-          divForm.style.display = 'Flex'
+         // divForm.style.opacity='1'
+         // divForm.style.transition='1s all ease'
+         // divForm.style.display = 'Flex'
         }else{
           <NavLink exact to="/" />
         }
       }
 
       closeWindow() {
-        let divForm = document.getElementById("divforContact")
+       // let divForm = document.getElementById("divforContact")
         this.setState({windowDescription: false})
-        divForm.style.opacity='0'
-        divForm.style.transition='1s all ease'
-        divForm.style.display='none'
+       // divForm.style.opacity='0'
+       // divForm.style.transition='1s all ease'
+       // divForm.style.display='none'
       }
     
     
@@ -116,8 +110,10 @@ class Realisation extends Component {
                 <div id="btn_exit" onClick={() => this.closeWindow(id)}>Fermer</div>
                 <li className="liItemDiv"><p className="paraDiv">{realisation.description} à {realisation.lieu}.
                 </p></li>
+                <div className="alignPicture">
                 <li><img className="photos" alt={realisation.photo_before} src={realisation.photo_before}/></li>
                 <li><img className="photos" alt={realisation.photo_after}  src={realisation.photo_after}/></li>
+                </div>
                 <li className="liItemDiv"><p className="paraDiv">Les travaux ont été réalisé le {realisation.date}.</p></li>
             </ul>  
             
@@ -134,22 +130,25 @@ class Realisation extends Component {
                   <div className="bg_title_rea">
                     <h1 className="title_first">Réalisations</h1>
                   </div>
+                  <div className="divPara_front">
+                  <h2 className="titleFront">Tout commence par une envie moderne</h2>
+                  <p className="paraFront">Vos idées , nos compétences. <br/> 
+                  Ainsi nous vous aidons a réalisé vos projets ! </p>
+                  <p className="para2Front"></p>
+                  </div>
                   <div className="box_item">
                       <div className="ItemDiv">
                           {this.renderItems()}
-                          <div id="divforContact">
-                            <div className="Anim-cercle"></div>
-                              <h2 id="paraContact">Envie de réalisé un projet ?</h2>
-                              <a id="linkContact"><NavLink exact to="/contact" className="pathContact">
-                              Prendre contact
-                              </NavLink></a>
-                            </div>
-                        </div>
-                        {this.state.windowDescription && (
+                          {this.state.windowDescription && (
                           <div className="Extend"  >
                               <p>{this.renderSquare(this.state.descriptionActive)}</p>
                           </div>
                         )}
+                        </div>
+                    </div>
+                    <div className="divPara_bottom">
+                      <h2 className="titleParaBottom"></h2>
+                      <p className="paraBottom"></p>
                     </div>
                 </div>
             </div>
@@ -167,3 +166,19 @@ export default Realisation;
 /*  <img className="photos" src = {item.photo_before} />
     <img className="photos" src = {item.photo_after} /> */ 
     /* `id${item}` */
+
+
+/* 
+
+ 
+ <div id="divforContact">
+    <div className="Anim-cercle"></div> 
+      <h2 id="paraContact">Envie de réaliser un projet ?</h2>
+      <a id="linkContact"><NavLink exact to="/contact" className="pathContact">
+      Prendre contact
+      </NavLink></a>
+ </div>
+
+
+
+*/

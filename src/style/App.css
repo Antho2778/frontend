@@ -73,10 +73,9 @@ body,html{
     justify-content: center;
     width: 100%;
     border: 1px solid black;
-    border-radius: 10px;
     opacity: 1;
     /*background-color: rgba(35, 158, 237, 1); */ 
-    background-image: linear-gradient(10deg,#fff,#239EED );
+   /* background-image: linear-gradient(10deg,#fff,#239EED ); */
 }
 
 #btn_exit{
@@ -88,7 +87,7 @@ body,html{
   position: relative;
   left: -25px;
   top: -15px;
-  width: 50px;
+  width: 60px;
   height: 30px;
   border: 1px solid black;
   border-radius: 25px;
